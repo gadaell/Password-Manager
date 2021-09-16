@@ -12,6 +12,11 @@
 	--text-color: black;
 }
 
+a {
+	color: var(--text-color);
+	text-decoration: none;
+}
+
 .headerwrapper {
 	background-color: var(--primary-color);
 	display: flex;
@@ -21,7 +26,7 @@
 }
 
 .header-logo {
-	height: 5rem;
+	height: 8rem;
 }
 
 #header-title {
@@ -49,4 +54,27 @@
 .btn-custom:hover {
 	background-color: var(--accent-color-blue);
 	color: var(--accent-color-yellow);
+}
+
+#user-greeting {
+	color: var(--secondary-color);
+	font-size: 2rem;
+}
+
+.entries {
+	/* border-right: 0.25rem solid black; */
+}
+
+.site img {
+	height: 2rem;
+}
+
+.single-entry {
+	border: 1px solid black;
+}
+
+.main-dash {
+	height: 75vh;
+	border-left: 0.25rem solid black;
+	justify-content: space-around;
 }

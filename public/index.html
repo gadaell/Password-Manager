@@ -21,7 +21,14 @@
 					alt="logo"
 					class="header-logo"
 				/>
-				<h1 id="header-title">Virtual Guardian</h1>
+				<div class="d-flex flex-column align-items-center">
+					<h1 id="header-title">Virtual Guardian</h1>
+					<p id="user-greeting">Hello User!</p>
+					<div>
+						<button class="btn btn-success">Add</button>
+						<button class="btn btn-danger">Logout</button>
+					</div>
+				</div>
 				<img
 					src="./assets/img/virtual guardian.png"
 					alt="logo"
@@ -29,50 +36,51 @@
 				/>
 			</div>
 		</header>
-
-		<main>
-			<!-- Login Form -->
-			<div class="login-menu container mb-4">
-				<div class="row">
-					<h2 class="col">Sign Up</h2>
+		<main class="container-fluid">
+			<div class="row">
+				<!-- Entries -->
+				<div class="entries col-3">
+					<a href="">
+						<div class="row single-entry">
+							<div class="site d-flex justify-content-evenly p-2">
+								<!-- TODO add favcon grabber -->
+								<img src="./assets/img/Google__G__Logo.svg.png" alt="" />
+								<h4>google.com</h4>
+							</div>
+						</div>
+					</a>
+					<a href="">
+						<div class="row single-entry">
+							<div class="site d-flex justify-content-evenly p-2">
+								<img src="./assets/img/Google__G__Logo.svg.png" alt="" />
+								<h4>google.com</h4>
+							</div>
+						</div>
+					</a>
 				</div>
-				<div class="row">
-					<form action="submit" class="login-form">
-						<div class="col">
-							<label for="email">Email: </label>
-							<input type="text" id="email" />
+
+				<!-- Dashboard -->
+				<div class="main-dash col-9">
+					<form action="submit">
+						<input class="dashbord-title display-3" value="Website" />
+						<div class="dashbord-email d-flex">
+							<label for="edit-email">Email: </label>
+							<input type="text" id="edit-email" />
 						</div>
-						<div class="col">
-							<label for="username">Username: </label>
-							<input type="text" id="username" />
+						<div class="dashboard-username d-flex">
+							<label for="edit-username">Username: </label>
+							<input type="text" id="edit-username" />
 						</div>
-						<div class="col">
-							<label for="password">Password: </label>
-							<input type="password" id="password" />
+						<div class="dashboard-password d-flex">
+							<label for="edit-password">Password: </label>
+							<input type="text" id="edit-password" />
 						</div>
-						<div class="col">
-							<button class="btn btn-custom">Sign Up</button>
+						<div class="dashboard-btns">
+							<button class="btn btn-success">Save</button>
+							<button class="btn btn-danger">Undo</button>
 						</div>
 					</form>
 				</div>
-			</div>
-
-			<!-- Google Button -->
-			<div class="google-login container mb-4 d-flex justify-content-center">
-				<button class="btn btn-custom">
-					Sign Up With Google |
-					<img
-						src="./assets/img/Google__G__Logo.svg.png"
-						alt="google-logo"
-						class="google-logo"
-					/>
-				</button>
-			</div>
-
-			<!-- Sign Up Link -->
-			<div class="sign-up-link container mb-4">
-				<h3>Already Have an Account? Login Here!</h3>
-				<a href=""><button class="btn btn-custom">Login</button></a>
 			</div>
 		</main>
 	</body>
