@@ -1,0 +1,52 @@
+* {
+	margin: 0px;
+	padding: 0px;
+	box-sizing: border-box;
+}
+
+:root {
+	--primary-color: #545454;
+	--secondary-color: #28ff0d;
+	--accent-color-yellow: #ffff00;
+	--accent-color-blue: #0139a6;
+	--text-color: black;
+}
+
+.headerwrapper {
+	background-color: var(--primary-color);
+	display: flex;
+	align-content: center;
+	justify-content: space-around;
+	align-items: center;
+}
+
+.header-logo {
+	height: 5rem;
+}
+
+#header-title {
+	text-align: center;
+	padding: 2rem;
+	color: var(--accent-color-yellow);
+}
+
+.google-logo {
+	height: 2rem;
+}
+
+.login-menu,
+.login-form,
+.sign-up-link {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.btn-custom {
+	background-color: var(--secondary-color);
+}
+
+.btn-custom:hover {
+	background-color: var(--accent-color-blue);
+	color: var(--accent-color-yellow);
+}
