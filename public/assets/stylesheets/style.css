@@ -35,25 +35,12 @@ a {
 	color: var(--accent-color-yellow);
 }
 
+.login-signup-card {
+	margin: 5px auto;
+}
+
 .google-logo {
 	height: 2rem;
-}
-
-.login-menu,
-.login-form,
-.sign-up-link {
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-}
-
-.btn-custom {
-	background-color: var(--secondary-color);
-}
-
-.btn-custom:hover {
-	background-color: var(--accent-color-blue);
-	color: var(--accent-color-yellow);
 }
 
 #user-greeting {
@@ -77,4 +64,8 @@ a {
 	height: 75vh;
 	border-left: 0.25rem solid black;
 	justify-content: space-around;
+}
+
+.dash-card {
+	width: 18em;
 }
