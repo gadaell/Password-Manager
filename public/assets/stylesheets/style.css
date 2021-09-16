@@ -1,0 +1,80 @@
+* {
+	margin: 0px;
+	padding: 0px;
+	box-sizing: border-box;
+}
+
+:root {
+	--primary-color: #545454;
+	--secondary-color: #28ff0d;
+	--accent-color-yellow: #ffff00;
+	--accent-color-blue: #0139a6;
+	--text-color: black;
+}
+
+a {
+	color: var(--text-color);
+	text-decoration: none;
+}
+
+.headerwrapper {
+	background-color: var(--primary-color);
+	display: flex;
+	align-content: center;
+	justify-content: space-around;
+	align-items: center;
+}
+
+.header-logo {
+	height: 8rem;
+}
+
+#header-title {
+	text-align: center;
+	padding: 2rem;
+	color: var(--accent-color-yellow);
+}
+
+.google-logo {
+	height: 2rem;
+}
+
+.login-menu,
+.login-form,
+.sign-up-link {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.btn-custom {
+	background-color: var(--secondary-color);
+}
+
+.btn-custom:hover {
+	background-color: var(--accent-color-blue);
+	color: var(--accent-color-yellow);
+}
+
+#user-greeting {
+	color: var(--secondary-color);
+	font-size: 2rem;
+}
+
+.entries {
+	/* border-right: 0.25rem solid black; */
+}
+
+.site img {
+	height: 2rem;
+}
+
+.single-entry {
+	border: 1px solid black;
+}
+
+.main-dash {
+	height: 75vh;
+	border-left: 0.25rem solid black;
+	justify-content: space-around;
+}

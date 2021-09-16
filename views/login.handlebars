@@ -1,0 +1,43 @@
+{{>headers/login-signup}}
+
+<main>
+			<!-- Login Form -->
+			<div class="login-menu container mb-4">
+				<div class="row">
+					<h2 class="col">Login</h2>
+				</div>
+				<div class="row">
+					<form action="submit" class="login-form">
+						<div class="col">
+							<label for="username">Username: </label>
+							<input type="text" id="username" />
+						</div>
+						<div class="col">
+							<label for="password">Password: </label>
+							<input type="password" id="password" />
+						</div>
+						<div class="col">
+							<button class="btn btn-custom">Login</button>
+						</div>
+					</form>
+				</div>
+			</div>
+
+			<!-- Google Button -->
+			<div class="google-login container mb-4 d-flex justify-content-center">
+				<button class="btn btn-custom">
+					Login With Google |
+					<img
+						src="./assets/img/Google__G__Logo.svg.png"
+						alt="google-logo"
+						class="google-logo"
+					/>
+				</button>
+			</div>
+
+			<!-- Sign Up Link -->
+			<div class="sign-up-link container mb-4">
+				<h3>New to Virtual Guardian? Sign Up Here!</h3>
+				<a href=""><button class="btn btn-custom">Sign Up</button></a>
+			</div>
+		</main>
