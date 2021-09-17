@@ -1,0 +1,37 @@
+{{> headers/login-signup}}
+
+<main>
+	<div class="card border-success p-2 dash-card login-signup-card ">
+	<form action="submit" class="d-flex flex-column align-items-end m-3">
+		<h2 class="display-2">Sign Up</h2>
+		<div class="signup-email d-flex mt-2">
+			<label for="email">Email: </label>
+			<input type="text" id="email" />
+		</div>
+		<div class="signup-username d-flex mt-2">
+			<label for="username">Username: </label>
+			<input type="text" id="username" />
+		</div>
+		<div class="signup-password d-flex mt-2">
+			<label for="password">Password: </label>
+			<input type="password" id="password" />
+		</div>
+		<div class="signup-btn align-self-center mt-5">
+			<button class="btn btn-success">Sign Up</button>
+		</div>
+	</form>
+
+	<div class="google-login align-self-center mt-5">
+		<a href="">
+			<button class="btn btn-success">Login with Google | <img class="google-logo" src="./assets/img/Google__G__Logo.svg.png" alt=""></button>
+		</a>
+	</div>
+
+	<div class="d-flex mt-2 justify-content-center">
+		<p>Already a user? | </p>
+		<a href="">| Login Here</a>
+
+	</div>
+</div>	
+
+</main>

@@ -1,0 +1,21 @@
+{{> headers/logged-in}}
+
+		<main class="container-fluid">
+			<div class="row">
+				<!-- Entries -->
+				<div class="entries col-3">
+                    {{!-- Use each to loop this --}}
+                    {{> entry}}
+				</div>
+
+				<!-- Dashboard -->
+				<div class="main-dash col-9 d-flex flex-column align-items-center">
+                    {{!-- If viewing entry --}}
+                    {{!-- {{> dashboard/dashboard-view}} --}}
+
+					{{!-- If editing entry --}}
+					{{> dashboard/dashboard-edit}}
+
+				</div>
+			</div>
+		</main>
