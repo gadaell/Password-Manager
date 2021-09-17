@@ -9,6 +9,7 @@ const PORT = process.env.PORT || 3001;
 // js files needed to application to work
 const apiRoutes = require("./controllers/apiRoutes");
 const htmlRoutes = require("./controllers/htmlRoutes");
+const userRoutes = require("./controllers/user-routes");
 const hbs = exphbs.create();
 app.engine("handlebars", hbs.engine);
 app.set("view engine", "handlebars");
@@ -18,6 +19,8 @@ app.use(express.json());
 
 app.use("/", apiRoutes);
 app.use("/", htmlRoutes);
+app.use("/", userRoutes);
+
 app.use(require("./controllers/"));
 //Use public folder
 app.use(express.static("public"));

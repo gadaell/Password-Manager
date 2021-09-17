@@ -1,5 +1,5 @@
 const router = require("express").Router();
-const { User } = require('../../models');
+const { User } = require('../models/User');
 
 router.get('/api/passwords', (req, res) => {
     return res.json(db);
