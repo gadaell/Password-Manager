@@ -41,7 +41,7 @@ router.post("/", (req, res) => {
 		emailAddress: req.body.email,
 		password: req.body.password,
 	})
-		.then((dbUserData) => res.render("dashboard"))
+		.then((dbUserData) => res.render("login"))
 		.catch((err) => {
 			console.log(err);
 			res.status(500).json(err);
