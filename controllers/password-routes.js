@@ -1,5 +1,5 @@
 const router = require("express").Router();
-const { User } = require("../models/User");
+const Passwords = require("../models/Passwords");
 
 router.get("/passwords", (req, res) => {
 	console.log('get all passwords');
