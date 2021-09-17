@@ -7,8 +7,8 @@ const exphbs = require("express-handlebars");
 const app = express();
 const PORT = process.env.PORT || 3001;
 // js files needed to application to work
-// const apiRoutes = require("./controllers/apiRoutes");
-// const htmlRoutes = require("./controllers/htmlRoutes")
+const apiRoutes = require("./controllers/apiRoutes");
+const htmlRoutes = require("./controllers/htmlRoutes");
 const hbs = exphbs.create();
 app.engine("handlebars", hbs.engine);
 app.set("view engine", "handlebars");
@@ -16,8 +16,8 @@ app.set("view engine", "handlebars");
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
-// app.use("/", apiRoutes);
-// app.use("/", htmlRoutes);
+app.use("/", apiRoutes);
+app.use("/", htmlRoutes);
 app.use(require("./controllers/"));
 //Use public folder
 app.use(express.static("public"));
