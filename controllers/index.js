@@ -8,7 +8,7 @@ router.get("/", (req, res) => {
 			websiteEmail: "email@email.com",
 			websitePassword: "password",
 		};
-		res.render("signup");
+		res.render("login", fakeUser);
 	} catch (err) {
 		console.log(err);
 	}
