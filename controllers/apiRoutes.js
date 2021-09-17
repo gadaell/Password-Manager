@@ -1,63 +1,26 @@
 const router = require("express").Router();
-const { User } = require('../models/User');
+const  Passwords = require('../models/Passwords');
 
 router.get('/api/passwords', (req, res) => {
-    return res.json(db);
+  console.log('Test');
   });
 
   router.get('/api/passwords/:id', (req, res) => {
-    for(let i=0;i<db.length;i++){
-      if (db[i].id == req.params.id){
-        return res.json(db[i]);
-
-      }
-    }
+    console.log('Test');
   });
 
   router.post('/api/passwords', (req, res) => {
-    req.body.id = db.length + 1;
-     db.push(req.body);
-     fs.writeFile('./db/db.json', JSON.stringify(db), function(){
-      console.log("Added to file");
-  });
-    res.json(db);
+  console.log('Test');
+    
   });
 
   router.post('/api/passwords:id', (req, res) => {
-    req.body.id = db.length + 1;
-     db.push(req.body);
-     fs.writeFile('./db/db.json', JSON.stringify(db), function(){
-      console.log("Added to file");
-  });
-    res.json(db);
+    console.log('Test2');
   });
 
   router.delete('/api/passwords/:id', (req, res) => {
-    const newArray = db;
-    for(let i=0;i<newArray.length;i++){
-      if (newArray[i].id == req.params.id){
-        newArray.splice(i,1);
-      }
-    }
-    fs.writeFile('./db/db.json', JSON.stringify(newArray), function(){
-      console.log("Removed from file");
-  });
-   res.json(newArray);
+    console.log('Test2');
  });
 
- // GET /api/users
-router.get('/', (req, res) => {});
-
-// GET /api/users/1
-router.get('/:id', (req, res) => {});
-
-// POST /api/users
-router.post('/', (req, res) => {});
-
-// PUT /api/users/1
-router.put('/:id', (req, res) => {});
-
-// DELETE /api/users/1
-router.delete('/:id', (req, res) => {});
 
 module.exports = router;
