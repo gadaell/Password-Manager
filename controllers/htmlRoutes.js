@@ -2,7 +2,6 @@ const router = require("express").Router();
 const path = require("path");
 
 router.get("/dashboard", (req, res) => {
-	req.session.loggedIn = true;
 	console.log(req.session);
 	if (req.session.loggedIn) {
 		res.render("dashboard");
