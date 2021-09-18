@@ -76,6 +76,11 @@ router.post("/submit", (req, res) => {
   res.redirect("/dashboard");
 });
 
+router.post("/signup", (req, res) => {
+  console.log(req.body);
+  res.redirect("/signup");
+});
+
 router.put("/:id", (req, res) => {
   // expects {username: 'Lernantino', email: 'lernantino@gmail.com', password: 'password1234'}
 
