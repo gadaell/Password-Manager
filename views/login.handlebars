@@ -2,18 +2,18 @@
 
 <main>
 	<div class="card border-success p-2 dash-card login-signup-card ">
-	<form action="submit" class="d-flex flex-column align-items-end m-3">
+	<form action="/user/submit" method="POST" class="d-flex flex-column align-items-end m-3">
 		<h2 class="display-2">Login</h2>
 		<div class="login-username d-flex mt-2">
 			<label for="username">Username: </label>
-			<input type="text" id="username" />
+			<input type="text" id="username" name="username"/>
 		</div>
 		<div class="login-password d-flex mt-2">
 			<label for="password">Password: </label>
-			<input type="password" id="password" />
+			<input type="password" id="password" name="password" />
 		</div>
 		<div class="login-btn align-self-center mt-5">
-			<button class="btn btn-success">Login</button>
+			<button class="btn btn-success" id="btn-login">Login</button>
 		</div>
 	</form>
 
@@ -25,7 +25,7 @@
 
 	<div class="d-flex mt-2 justify-content-center">
 		<p>New to our site? | </p>
-		<a href="" id="link-signup">| Sign Up Here</a>
+		<a href="/signup/" id="link-signup">| Sign Up Here</a>
 
 	</div>
 </div>	
