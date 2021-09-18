@@ -14,23 +14,21 @@ Passwords.init(
       primaryKey: true,
       autoIncrement: true
     },
-    userID: {
+    user_id: {
       type: DataTypes.INTEGER,
       allowNull: false
     },
     website: {
       type: DataTypes.STRING,
       allowNull: false,
-      unique: true,
 
     },
-    websiteUsername: {
+    website_username: {
         type: DataTypes.STRING,
         allowNull: false,
-        unique: true,
  
       },
-    websitePassword: {
+    website_password: {
       type: DataTypes.STRING,
       allowNull: false,
 
@@ -40,12 +38,12 @@ Passwords.init(
     hooks: {
       async beforeCreate(newPasswordData) {
         console.log(newPasswordData);
-        newPasswordData.websitePassword = await bcrypt.hash(newPasswordData.websitePassword, 10);
+        newPasswordData.website_password = await bcrypt.hash(newPasswordData.website_password, 10);
         return newPasswordData;
       },
 
       async beforeUpdate(updatedPasswordData) {
-        updatedPasswordData.websitePassword = await bcrypt.hash(updatedPasswordData.websitePassword, 10);
+        updatedPasswordData.website_password = await bcrypt.hash(updatedPasswordData.website_password, 10);
         return updatedPasswordData;
       }
     },
