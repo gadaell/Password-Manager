@@ -1,5 +1,5 @@
 const router = require("express").Router();
-const { User } = require("../models/User");
+const User = require("../models/User");
 
 // get all users
 router.get("/", (req, res) => {
@@ -33,13 +33,15 @@ router.get("/:id", (req, res) => {
     });
 });
 
+// Create a new User
 router.post("/", (req, res) => {
+  console.log(req.body);
   User.create({
-    username: req.body.username,
-    email: req.body.email,
+    userName: req.body.username,
+    emailAddress: req.body.email,
     password: req.body.password,
   })
-    .then((dbUserData) => res.json(dbUserData))
+    .then((dbUserData) => res.render("login"))
     .catch((err) => {
       console.log(err);
       res.status(500).json(err);
@@ -67,11 +69,6 @@ router.post("/login", (req, res) => {
 
     res.json({ user: dbUserData, message: "You are now logged in!" });
   });
-});
-
-router.post("/submit", (req, res) => {
-  console.log(req.body);
-  res.redirect("/dashboard");
 });
 
 router.put("/:id", (req, res) => {
