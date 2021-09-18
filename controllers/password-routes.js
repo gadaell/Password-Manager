@@ -92,5 +92,4 @@ router.delete("/passwords/:id", (req, res) => {
 		});
 });
 
-
 module.exports = router;
