@@ -79,6 +79,15 @@ router.post("/login", (req, res) => {
 		.then(function (err) {
 			console.log(err);
 		});
+
+		router.post("/submit", (req, res) => {
+			console.log(req.body);
+			res.redirect("/dashboard");
+		  });
+		  
+		  router.post("/signup", (req, res) => {
+			console.log(req.body);
+			res.redirect("/signup");
 });
 
 router.put("/:id", (req, res) => {
