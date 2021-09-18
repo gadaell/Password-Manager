@@ -1,0 +1,22 @@
+<div class="card border-success p-2 dash-card">
+	<form action="/api/passwords" method="POST" id="newPasswordForm" class="d-flex flex-column align-items-end m-3">
+		<div class="dashboard-website d-flex mt-2">
+			<label for="website-add">Website: </label>
+			<input class="dashboard-title" id="website-add" name='addsite' />
+		</div>
+		<div class="dashboard-username d-flex mt-2">
+			<label for="add-username">Username: </label>
+			<input type="text" id="add-username" name='addusername' />
+		</div>
+		<div class="dashboard-password d-flex mt-2">
+			<label for="add-password">Password: </label>
+			<input type="text" id="add-password" name='addpass' />
+		</div>
+		<div class="dashboard-btns align-self-center mt-5">
+			<button class="btn btn-success" id="saveNewPassword">Save</button>
+			<button class="btn btn-danger" id="clearNewForm">Clear</button>
+		</div>
+	</form>
+</div>
+
+<script src="/assets/javascript/storeNewPassword.js"></script>

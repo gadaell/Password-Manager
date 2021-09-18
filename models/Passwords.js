@@ -3,9 +3,7 @@ const bcrypt = require('bcrypt');
 const sequelize = require('../config/connection');
 
 class Passwords extends Model {
-  checkPassword(loginPw) {
-    return bcrypt.compareSync(loginPw, this.password);
-  }
+
 }
 
 Passwords.init(
@@ -24,35 +22,30 @@ Passwords.init(
       type: DataTypes.STRING,
       allowNull: false,
       unique: true,
-      validate: {
-        isEmail: true
-      }
+
     },
     websiteUsername: {
         type: DataTypes.STRING,
         allowNull: false,
         unique: true,
-        validate: {
-          isEmail: true
-        }
+ 
       },
     websitePassword: {
       type: DataTypes.STRING,
       allowNull: false,
-      validate: {
-        len: [4]
-      }
+
     }
   },
   {
     hooks: {
       async beforeCreate(newPasswordData) {
-        newPasswordData.password = await bcrypt.hash(newPasswordData.password, 10);
+        console.log(newPasswordData);
+        newPasswordData.websitePassword = await bcrypt.hash(newPasswordData.websitePassword, 10);
         return newPasswordData;
       },
 
       async beforeUpdate(updatedPasswordData) {
-        updatedPasswordData.password = await bcrypt.hash(updatedPasswordData.password, 10);
+        updatedPasswordData.websitePassword = await bcrypt.hash(updatedPasswordData.websitePassword, 10);
         return updatedPasswordData;
       }
     },
