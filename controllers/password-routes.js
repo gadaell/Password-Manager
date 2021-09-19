@@ -1,5 +1,6 @@
 const router = require("express").Router();
 const Passwords = require("../models/Passwords");
+const CryptoJS = require("crypto-js");
 
 router.get("/passwords/user/:userid", (req, res) => {
 	Passwords.findAll({
@@ -31,6 +32,8 @@ Passwords.findOne({
 			res.status(404).json({ message: "No password data found with this id" });
 			return;
 		}
+		var bytes  = CryptoJS.AES.decrypt(dbPassData.website_password, 'encryptMe');
+		dbPassData.website_password = bytes.toString(CryptoJS.enc.Utf8);
 		res.json(dbPassData);
 	})
 	.catch((err) => {
@@ -40,8 +43,10 @@ Passwords.findOne({
 });
 
 router.post("/passwords", (req, res) => {
+	console.log(req);
+	console.log(req.session);
 Passwords.create({
-	user_id:'2',
+	user_id:'3',
 	website: req.body.website,
 	website_username: req.body.website_username,
 	website_password: req.body.website_password,
