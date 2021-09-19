@@ -54,31 +54,30 @@ router.post("/login", (req, res) => {
     where: {
       user_name: req.body.user_name,
     },
-  })
-    .then((dbUserData) => {
-      if (!dbUserData) {
-        res.status(400).redirect("/signup");
-        return;
-      }
+  }).then((dbUserData) => {
+    if (!dbUserData) {
+      res.status(400).redirect("/signup");
+      return;
+    }
 
-      const validPassword = dbUserData.checkPassword(req.body.password);
+    const validPassword = dbUserData.checkPassword(req.body.password);
 
-      if (!validPassword) {
-        res.status(400).json({ message: "Incorrect password!" });
-        return;
-      }
+    if (!validPassword) {
+      res.status(400).json({ message: "Incorrect password!" });
+      return;
+    }
 
-      req.session.save(() => {
-        req.session.user_id = dbUserData.id;
-        req.session.user_name = dbUserData.user_name;
-        req.session.loggedIn = true;
+    req.session.save(() => {
+      req.session.user_id = dbUserData.id;
+      req.session.user_name = dbUserData.user_name;
+      req.session.loggedIn = true;
 
-        res.redirect("/dashboard");
-      });
-    })
-    .then(function (err) {
-      console.log(err);
+      res.redirect("/dashboard");
     });
+  });
+  // .catch(function (err) {
+  //   console.log(err);
+  // });
 
   router.post("/submit", (req, res) => {
     console.log(req.body);
