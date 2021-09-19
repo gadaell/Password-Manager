@@ -4,14 +4,7 @@ const Passwords = require("../models/Passwords");
 
 router.get("/dashboard", (req, res) => {
 	if (req.session.loggedIn) {
-		const allUserPosts = {
-			id: 1,
-			link: 2,
-			website: "google.com",
-			website_username: "danielzk",
-			website_password:
-				"$2b$10$VOzpw3gyHM8wsGiNX9D7ze43XJ9NxqshuFIibOszvDmtP8tSz0WVu",
-		};
+	
 		const data = {
 			session: req.session,
 			posts: allUserPosts,
