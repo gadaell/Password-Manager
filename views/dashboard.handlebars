@@ -5,14 +5,7 @@
 		<!-- Entries -->
 		<div class="entries col-3">
 			{{#each posts}}
-			<a href="api/passwords/{{id}}">
-				<div class="row single-entry">
-					<div class="site d-flex justify-content-evenly p-2">
-						<img src="" alt="favcon" id="favcon" class="fa fas-google" />
-						<h4 id="website-name">{{website}}</h4>
-					</div>
-				</div>
-			</a>
+		{{> entry}}
 			{{/each}}
 		</div>
 

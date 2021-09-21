@@ -13,7 +13,7 @@ router.get("/dashboard", (req, res) => {
 				password.get({ plain: true })
 			);
 
-			console.log("allPasswords: ", allPasswords);
+			// console.log("allPasswords: ", allPasswords);
 			const data = {
 				session: req.session,
 				posts: allPasswords,
