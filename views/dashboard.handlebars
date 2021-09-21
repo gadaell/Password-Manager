@@ -4,16 +4,16 @@
 	<div class="row">
 		<!-- Entries -->
 		<div class="entries col-3">
-			{{!-- {{#each website}} --}}
+			{{#each posts}}
 			<a href="">
-	<div class="row single-entry">
-		<div class="site d-flex justify-content-evenly p-2">
-			<img src="" alt="favcon" id="favcon" />
-			<h4 id="website-name">{{posts.dataValues.website}}</h4>
-		</div>
-	</div>
-</a>
-			{{!-- {{/each}} --}}
+				<div class="row single-entry">
+					<div class="site d-flex justify-content-evenly p-2">
+						<img src="" alt="favcon" id="favcon" class="fa fas-google" />
+						<h4 id="website-name">{{website}}</h4>
+					</div>
+				</div>
+			</a>
+			{{/each}}
 		</div>
 
 		<!-- Dashboard -->

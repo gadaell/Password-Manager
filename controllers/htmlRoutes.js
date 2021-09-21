@@ -3,22 +3,28 @@ const path = require("path");
 const Passwords = require("../models/Passwords");
 
 router.get("/dashboard", (req, res) => {
-  Passwords.findAll({
-    where: {
-      link: req.session.user_id,
-    },
-  })
-    .then(function (passwordData) {
-      console.log(passwordData);
-      const data = {
-        session: req.session,
-        posts: passwordData,
-      }; console.log ("-----123------", data.posts);
-      res.render("dashboard", data);
-    })
-    .catch(function (err) {
-      console.log(err);
-    });
+	Passwords.findAll({
+		where: {
+			link: req.session.user_id,
+		},
+	})
+		.then(function (passwordData) {
+			const allPasswords = passwordData.map((password) =>
+				password.get({ plain: true })
+			);
+
+			console.log("allPasswords: ", allPasswords);
+			const data = {
+				session: req.session,
+				posts: allPasswords,
+				image: allPasswords.website,
+			};
+
+			res.render("dashboard", data);
+		})
+		.catch(function (err) {
+			console.log(err);
+		});
 });
 // const allUserPosts = {
 //   id: 1,
@@ -35,17 +41,17 @@ router.get("/dashboard", (req, res) => {
 //   }
 
 router.get("/password:id", (req, res) => {
-  res.sendFile(path.join(__dirname, "../../password.html"));
+	res.sendFile(path.join(__dirname, "../../password.html"));
 });
 
 router.get("/signup", (req, res) => {
-  req.session.loggedIn = false;
-  res.render("signup");
+	req.session.loggedIn = false;
+	res.render("signup");
 });
 
 router.get("/", (req, res) => {
-  req.session.loggedIn = false;
-  res.render("login");
+	req.session.loggedIn = false;
+	res.render("login");
 });
 
 module.exports = router;
