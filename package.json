@@ -19,6 +19,7 @@
 	"homepage": "https://github.com/gadaell/Password-Manager#readme",
 	"dependencies": {
 		"bcrypt": "^5.0.1",
+		"cli": "^1.0.1",
 		"connect-session-sequelize": "^7.1.2",
 		"crypto-js": "^4.1.1",
 		"dotenv": "^10.0.0",
@@ -26,6 +27,7 @@
 		"express-handlebars": "^5.3.3",
 		"express-session": "^1.17.2",
 		"mysql2": "^2.3.0",
-		"sequelize": "^6.6.5"
+		"sequelize": "^6.6.5",
+		"sequelize-cli": "^6.2.0"
 	}
 }

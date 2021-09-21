@@ -36,11 +36,6 @@ router.get("/passwords/:id", (req, res) => {
 					.json({ message: "No password data found with this id" });
 				return;
 			}
-			var bytes = CryptoJS.AES.decrypt(
-				dbPassData.website_password,
-				"encryptMe"
-			);
-			dbPassData.website_password = bytes.toString(CryptoJS.enc.Utf8);
 			res.json(dbPassData);
 		})
 		.catch((err) => {
@@ -50,15 +45,13 @@ router.get("/passwords/:id", (req, res) => {
 });
 
 router.post("/passwords", (req, res) => {
-	console.log(req);
-	console.log(req.session);
 	Passwords.create({
 		link: req.session.user_id,
 		website: req.body.website,
 		website_username: req.body.website_username,
 		website_password: req.body.website_password,
 	})
-		.then((dbPassData) => res.render("dashboard"))
+		.then((dbPassData) => res.redirect("/dashboard"))
 		.catch((err) => {
 			console.log(err);
 			res.status(500).json(err);
