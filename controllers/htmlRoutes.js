@@ -13,7 +13,7 @@ router.get("/dashboard", (req, res) => {
       const data = {
         session: req.session,
         posts: passwordData,
-      };
+      }; console.log ("-----123------", data.posts);
       res.render("dashboard", data);
     })
     .catch(function (err) {

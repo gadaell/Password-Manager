@@ -50,7 +50,7 @@ router.post("/passwords", (req, res) => {
     website_username: req.body.website_username,
     website_password: req.body.website_password,
   })
-    .then((dbPassData) => res.send(dbPassData))
+    .then((dbPassData) => res.redirect("/dashboard"))
     .catch((err) => {
       console.log(err);
       res.status(500).json(err);
