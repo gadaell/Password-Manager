@@ -1,6 +1,7 @@
 const router = require("express").Router();
 const path = require("path");
 const Passwords = require("../models/Passwords");
+const CryptoJS = require("crypto-js");
 
 router.get("/dashboard", (req, res) => {
 	Passwords.findAll({
@@ -17,7 +18,6 @@ router.get("/dashboard", (req, res) => {
 			const data = {
 				session: req.session,
 				posts: allPasswords,
-				image: allPasswords.website,
 			};
 
 			res.render("dashboard", data);
@@ -34,6 +34,26 @@ router.get("/password:id", (req, res) => {
 router.get("/signup", (req, res) => {
 	req.session.loggedIn = false;
 	res.render("signup");
+});
+
+router.get("/dashboard/edit/:id", (req, res) => {
+	Passwords.findOne({
+		where: {
+			id: req.params.id,
+		},
+	}).then((dbPassData) => {
+		var bytes = CryptoJS.AES.decrypt(dbPassData.website_password, "encryptMe");
+		dbPassData.website_password = bytes.toString(CryptoJS.enc.Utf8);
+
+		const postData = dbPassData.get({ plain: true });
+
+		const data = {
+			session: req.session,
+			post: postData,
+		};
+
+		res.render("dashboard-edit", data);
+	});
 });
 
 router.get("/", (req, res) => {
