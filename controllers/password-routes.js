@@ -41,8 +41,13 @@ router.get("/passwords/:id", (req, res) => {
 				"encryptMe"
 			);
 			dbPassData.website_password = bytes.toString(CryptoJS.enc.Utf8);
-			let data = {session: req.session, password: dbPassData.website_password, username: dbPassData.website_username, website: dbPassData.website};
-			res.render('dashboard',data);
+			let data = {
+				session: req.session,
+				password: dbPassData.website_password,
+				username: dbPassData.website_username,
+				website: dbPassData.website,
+			};
+			res.render("dashboard-view", data);
 		})
 		.catch((err) => {
 			console.log(err);
