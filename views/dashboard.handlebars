@@ -5,17 +5,17 @@
 		<!-- Entries -->
 		<div class="entries col-3">
 			{{#each posts}}
-		{{> entry}}
+			{{> entry}}
 			{{/each}}
 		</div>
 
 		<!-- Dashboard -->
 		<div class="main-dash col-9 d-flex flex-column align-items-center">
 			{{!-- If viewing entry --}}
-			{{!-- {{> dashboard/dashboard-view}} --}}
+			{{> dashboard/dashboard-view}}
 
 			{{!-- If editing entry --}}
-			{{> dashboard/dashboard-add}}
+			{{!--{{> dashboard/dashboard-add}}--}}
 
 		</div>
 	</div>
