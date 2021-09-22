@@ -29,4 +29,5 @@ async function setFavcon() {
 	}
 }
 
-setFavcon();
+const bodyEl = document.querySelector("body");
+bodyEl.onload = setFavcon;

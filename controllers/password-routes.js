@@ -46,6 +46,7 @@ router.get("/passwords/:id", (req, res) => {
 				password: dbPassData.website_password,
 				username: dbPassData.website_username,
 				website: dbPassData.website,
+				id: dbPassData.id,
 			};
 			res.render("dashboard-view", data);
 		})

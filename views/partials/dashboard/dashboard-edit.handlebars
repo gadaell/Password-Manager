@@ -1,21 +1,25 @@
 <div class="card border-success p-2 dash-card align-items-center">
-	<form action="submit" class="d-flex flex-column align-items-end m-3">
+	<form
+		action="api/passwords/{{id}}"
+		method="PUT"
+		class="d-flex flex-column align-items-end m-3"
+	>
 		<h3>Edit Your Password</h3>
 		<div class="dashboard-website d-flex mt-2">
 			<label for="website-edit">Website: </label>
-			<input class="dashboard-title" id="website-edit" />
-		</div>
-		<div class="dashboard-email d-flex mt-2">
-			<label for="edit-email">Email: </label>
-			<input type="text" id="edit-email" />
+			<input
+				class="dashboard-title"
+				id="website-edit"
+				value="{{post.website}}"
+			/>
 		</div>
 		<div class="dashboard-username d-flex mt-2">
 			<label for="edit-username">Username: </label>
-			<input type="text" id="edit-username" />
+			<input type="text" id="edit-username" value="{{post.website_username}}" />
 		</div>
 		<div class="dashboard-password d-flex mt-2">
 			<label for="edit-password">Password: </label>
-			<input type="text" id="edit-password" />
+			<input type="text" id="edit-password" value="{{post.website_password}}" />
 		</div>
 		<div class="dashboard-btns align-self-center mt-5">
 			<button class="btn btn-success">Save</button>

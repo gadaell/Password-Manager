@@ -1,7 +1,7 @@
 <div class="card border-success p-2 dash-card align-items-center">
 	<div class="card-contents d-flex flex-column align-items-end m-3">
 
-		<h3>{{website}} Password</h3>
+		<h3>{{website}} </h3>
 		<div class="dashboard-title d-flex mt-2">
 			<p class="m-1"><strong>Website:</strong></p>
 			<p class="m-1">{{website}}</p>
@@ -15,7 +15,9 @@
 			<p class="m-1">{{password}}</p>
 		</div>
 		<div class="dashboard-btns align-self-center mt-5">
-			<button class="btn btn-success">Edit</button>
+			<a href="/dashboard/edit/{{id}}"><button
+					class="btn btn-success"
+				>Edit</button></a>
 			<a href="/dashboard"><button class="btn btn-warning">Back</button></a>
 			<button class="btn btn-danger">Delete</button>
 		</div>
