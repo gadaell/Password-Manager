@@ -15,7 +15,12 @@ router.get("/passwords/user/:userid", (req, res) => {
 					.json({ message: "No password data found for this user" });
 				return;
 			}
-			res.json(dbPassData);
+			if (req.session.loggedIn) {
+				res.json(dbPassData);
+			} else {
+				req.session.loggedIn = false;
+				res.redirect("/");
+			}
 		})
 		.catch((err) => {
 			console.log(err);
@@ -48,7 +53,13 @@ router.get("/passwords/:id", (req, res) => {
 				website: dbPassData.website,
 				id: dbPassData.id,
 			};
-			res.render("dashboard-view", data);
+
+			if (req.session.loggedIn) {
+				res.render("dashboard-view", data);
+			} else {
+				req.session.loggedIn = false;
+				res.redirect("/");
+			}
 		})
 		.catch((err) => {
 			console.log(err);
@@ -82,7 +93,12 @@ router.put("/passwords/:id", (req, res) => {
 				res.status(404).json({ message: "No password found with this id" });
 				return;
 			}
-			res.json(dbPassData);
+			if (req.session.loggedIn) {
+				res.json(dbPassData);
+			} else {
+				req.session.loggedIn = false;
+				res.redirect("/");
+			}
 		})
 		.catch((err) => {
 			console.log(err);

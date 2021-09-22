@@ -20,7 +20,11 @@ router.get("/dashboard", (req, res) => {
 				posts: allPasswords,
 			};
 
-			res.render("dashboard", data);
+			if (req.session.loggedIn) {
+				res.render("dashboard", data);
+			} else {
+				res.render("login");
+			}
 		})
 		.catch(function (err) {
 			console.log(err);
