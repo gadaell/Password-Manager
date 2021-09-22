@@ -36,6 +36,11 @@ router.get("/passwords/:id", (req, res) => {
 					.json({ message: "No password data found with this id" });
 				return;
 			}
+			var bytes = CryptoJS.AES.decrypt(
+				dbPassData.website_password,
+				"encryptMe"
+			);
+			dbPassData.website_password = bytes.toString(CryptoJS.enc.Utf8);
 			res.json(dbPassData);
 		})
 		.catch((err) => {
