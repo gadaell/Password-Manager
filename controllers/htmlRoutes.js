@@ -50,7 +50,7 @@ router.get("/signup", (req, res) => {
 });
 
 router.get("/", (req, res) => {
-	req.session.loggedIn = false;
+	req.session.destroy();
 	res.render("login");
 });
 
