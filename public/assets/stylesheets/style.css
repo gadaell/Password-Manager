@@ -64,6 +64,7 @@ a {
 	height: 75vh;
 	border-left: 0.25rem solid black;
 	justify-content: space-around;
+	margin: 0px auto;
 }
 
 .dash-card {
@@ -71,22 +72,26 @@ a {
 }
 
 .mobile-logo {
-	display:none;
+	display: none;
 }
 @media screen and (max-width: 700px) {
 	.entries {
-	 text-align: center;
-	  width: 100%;
+		text-align: center;
+		width: 100%;
 	}
 	.dash-card {
-	 text-align: center;
-	  width: 100%;
+		text-align: center;
+		width: 100%;
 	}
-.mobile-logo {
-	display: block;
-	height: 15rem;
-}
-	.header-logo{
+	.mobile-logo {
+		display: block;
+		height: 15rem;
+	}
+	.header-logo {
 		display: none;
 	}
-  }
+
+	.main-dash {
+		border-left: none;
+	}
+}
