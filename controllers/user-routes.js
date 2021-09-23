@@ -67,11 +67,12 @@ router.post("/login", (req, res) => {
 			return;
 		}
 
+    req.session.user_id = dbUserData.id;
+    req.session.user_name = dbUserData.user_name;
+    req.session.loggedIn = true;
+    req.session.dashView = true;
 		req.session.save(() => {
-			req.session.user_id = dbUserData.id;
-			req.session.user_name = dbUserData.user_name;
-			req.session.loggedIn = true;
-			req.session.dashView = true;
+	
 
 			res.redirect("/dashboard");
 		});
