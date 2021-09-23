@@ -69,3 +69,24 @@ a {
 .dash-card {
 	width: 20em;
 }
+
+.mobile-logo {
+	display:none;
+}
+@media screen and (max-width: 700px) {
+	.entries {
+	 text-align: center;
+	  width: 100%;
+	}
+	.dash-card {
+	 text-align: center;
+	  width: 100%;
+	}
+.mobile-logo {
+	display: block;
+	height: 15rem;
+}
+	.header-logo{
+		display: none;
+	}
+  }
