@@ -71,6 +71,7 @@ router.post("/passwords", (req, res) => {
 });
 
 router.put("/passwords/:id", (req, res) => {
+	console.log(req.body);
 	Passwords.update(req.body, {
 		individualHooks: true,
 		where: {
@@ -82,7 +83,7 @@ router.put("/passwords/:id", (req, res) => {
 				res.status(404).json({ message: "No password found with this id" });
 				return;
 			}
-			res.json(dbPassData);
+			res.json("success");
 		})
 		.catch((err) => {
 			console.log(err);
