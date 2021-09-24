@@ -25,3 +25,7 @@ async function editFormHandler(event) {
 }
 
 document.getElementById("edit").addEventListener("submit", editFormHandler);
+document.getElementById("undo").addEventListener("click", function () {
+	console.log();
+	window.location.replace("/dashboard");
+});
