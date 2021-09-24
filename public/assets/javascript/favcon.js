@@ -13,7 +13,7 @@ async function setFavcon() {
 
 	for (let i = 0; i < siteValues.length; i++) {
 		try {
-			const url = "http://favicongrabber.com/api/grab/" + siteValues[i];
+			const url = "https://favicongrabber.com/api/grab/" + siteValues[i];
 
 			const response = await fetch(url);
 			console.log("response: ", response);
