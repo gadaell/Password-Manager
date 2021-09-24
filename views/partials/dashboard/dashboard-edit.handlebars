@@ -1,7 +1,5 @@
 <div class="card border-success p-2 dash-card align-items-center">
 	<form
-		action="api/passwords/{{id}}"
-		method="PUT"
 		class="d-flex flex-column align-items-end m-3"
 	>
 		<h3>Edit Your Password</h3>
@@ -22,7 +20,7 @@
 			<input type="text" id="edit-password" value="{{post.website_password}}" />
 		</div>
 		<div class="dashboard-btns align-self-center mt-5">
-			<button id="edit" class="btn btn-success">Save</button>
+			<button id="dashboard-edit-submit" class="btn btn-success">Save</button>
 			<button class="btn btn-danger">Undo</button>
 		</div>
 	</form>

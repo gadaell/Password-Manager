@@ -1,27 +1,28 @@
 async function editFormHandler(event) {
-	event.preventDefault();
+  event.preventDefault();
 
-	const title = document
-		.querySelector('input[name="dashboard-title"]')
-		.value.trim();
-	const id = window.location.toString().split("/")[
-		window.location.toString().split("/").length - 1
-	];
-	const response = await fetch(`/dashboard/edit/api/passwords/${id}`, {
-		method: "PUT",
-		body: JSON.stringify({
-			title,
-		}),
-		headers: {
-			"Content-Type": "application/json",
-		},
-	});
+  const title = document.getElementById("website-edit").value
+  const password = document.getElementById("edit-password").value
+  const username = document.getElementById("edit-username").value
+  const id = window.location.toString().split('/')[
+    window.location.toString().split('/').length - 1
+  ]; 
+  console.log(title);
+  const response = await fetch(`/api/passwords/${id}`, {
+    method: 'PUT',
+    headers: {'Content-Type': 'application/json'},
+    body: JSON.stringify({
+    website: title,
+    website_password: password,
+    website_username: username})
+    
+  });
 
-	if (response.ok) {
-		document.location.replace("/dashboard");
-	} else {
-		alert(response.statusText);
-	}
+  if (response.ok) {
+    window.location.replace("/dashboard")
+  } else {
+    alert(response.statusText);
+  }
 }
 
-document.getElementById("edit").addEventListener("submit", editFormHandler);
+document.getElementById("dashboard-edit-submit").addEventListener('click', editFormHandler);
